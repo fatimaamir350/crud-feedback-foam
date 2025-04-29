@@ -17,6 +17,10 @@
 
   <form action="" method="post" style="background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 800px; margin: auto;">
     <table style="width: 100%; border-collapse: collapse;">
+    <input type="hidden" name="stu_id" value="<?php echo $row['stu_id']; ?>">
+
+<table style="width: 100%; border-collapse: collapse;">
+  
       
       
       <tr>
@@ -90,6 +94,7 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     $stu_id = $_POST['stu_id'];
     $studentname  = $_POST['studentName'];
     $studentemail = $_POST['studentEmail'];
     $studentphone = $_POST['studentPhone'];

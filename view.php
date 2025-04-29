@@ -30,19 +30,25 @@ include("config.php");
      $sql = "SELECT * FROM `feedbackfoam`";
 
       $result = mysqli_query($conn, $sql);
-      $sno = 1;
+      
 
       foreach($result as $row)
       {?>
       
   <tr>
-    <td><?php echo $sno++; ?></td>
+
+  
+  <td><?php echo $row['stu_id']; ?></td>
+   
     <td><?php echo $row['stu_name']; ?></td>
     <td><?php echo $row['stu_email']; ?></td>
     <td><?php echo $row['stu_phone']; ?></td>
     <td><?php echo $row['stu_center']; ?></td>
     <td><?php echo $row['stu_batch']; ?></td>
     <td><?php echo $row['stu_desciption']; ?></td>
+   <td><a href="updat.php?id=<?php echo$row['stu_id']?>">Edit</a></td>
+   <td><a href="delete.php?id=<?php echo$row['stu_id']?>">Delete</a></td>
+   
   </tr>
 
      
@@ -54,6 +60,7 @@ include("config.php");
 
 
      ?>
+
     
     
 
@@ -65,3 +72,4 @@ include("config.php");
 
 </body>
 </html>
+
